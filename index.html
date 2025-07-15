@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login con Validaciones</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Login con Validaciones</h2>
+        <form id="loginForm">
+            <label for="username">Usuario:</label>
+            <input type="text" id="username" required>
+            <span class="error" id="userError"></span>
+            <br><br>
+            
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" required>
+            <span class="error" id="passError"></span>
+            <br><br>
+            
+            <button type="submit">Iniciar Sesión</button>
+        </form>
+    </div>
+    <script src="/javascript/script.js"></script>
+</body>
+</html>

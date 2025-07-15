@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header>
+            <h1 id="welcomeMessage">¡Bienvenido!</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Perfil</a></li>
+                    <li><a href="#">Configuración</a></li>
+                    <li><a href="#">Ayuda</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section class="profile">
+            <h2>Tu Perfil</h2>
+            <p><strong>Usuario:</strong> <span id="usernameDisplay"></span></p>
+            <p><strong>Rol:</strong> Usuario estándar</p>
+        </section>
+
+        <button id="logoutBtn" class="btn">Cerrar sesión</button>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const params = new URLSearchParams(window.location.search);
+            const username = params.get("user");
+
+            if (username) {
+                document.getElementById("welcomeMessage").textContent = `¡Bienvenido, ${username}!`;
+                document.getElementById("usernameDisplay").textContent = username;
+            } else {
+                document.getElementById("usernameDisplay").textContent = "Usuario desconocido";
+            }
+
+            document.getElementById("logoutBtn").addEventListener("click", function() {
+                window.location.href = "index.html";
+            });
+        });
+    </script>
+</body>
+</html>
